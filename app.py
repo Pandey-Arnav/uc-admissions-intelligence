@@ -39,15 +39,15 @@ CHAR_OPTIONS = {
 }
 
 COLORS = {
-    "bg": "#0A0E17",
-    "card": "#131A2B",
-    "card_border": "#232E48",
-    "text": "#E8ECF4",
-    "muted": "#8B96AC",
-    "accent": "#6C8EF5",
-    "positive": "#34D399",
-    "negative": "#F87171",
-    "grid": "#1E2740",
+    "bg": "#F1EEEA",
+    "card": "#FFFFFF",
+    "card_border": "#E2DED7",
+    "text": "#1E1E24",
+    "muted": "#6D6A67",
+    "accent": "#FF6A00",
+    "positive": "#15803D",
+    "negative": "#DC2626",
+    "grid": "#E7E2D8",
 }
 
 st.set_page_config(
@@ -102,8 +102,8 @@ st.markdown(
     }}
     .badge {{
         display: inline-block;
-        background: rgba(108, 142, 245, 0.12);
-        border: 1px solid rgba(108, 142, 245, 0.35);
+        background: rgba(255, 106, 0, 0.10);
+        border: 1px solid rgba(255, 106, 0, 0.35);
         color: {COLORS['accent']};
         font-size: 0.75rem;
         font-weight: 600;
@@ -141,7 +141,7 @@ st.markdown(
         border: 1px solid {COLORS['card_border']};
         border-radius: 14px;
         padding: 1.1rem 1.3rem;
-        box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+        box-shadow: 0 2px 10px rgba(30, 30, 36, 0.06);
     }}
 
     .kpi-label {{
@@ -167,8 +167,8 @@ st.markdown(
     .kpi-value.negative {{ color: {COLORS['negative']}; }}
 
     .insight-box {{
-        background: rgba(108, 142, 245, 0.08);
-        border: 1px solid rgba(108, 142, 245, 0.25);
+        background: rgba(255, 106, 0, 0.06);
+        border: 1px solid rgba(255, 106, 0, 0.25);
         border-left: 3px solid {COLORS['accent']};
         border-radius: 10px;
         padding: 0.9rem 1.1rem;
@@ -948,7 +948,7 @@ else:
             y=labels,
             colorscale=[
                 [0.0, COLORS["negative"]],
-                [0.5, "#1B2338"],
+                [0.5, "#F5F1E9"],
                 [1.0, COLORS["positive"]],
             ],
             zmid=0,
