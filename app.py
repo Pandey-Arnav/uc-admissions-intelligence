@@ -78,23 +78,23 @@ st.markdown(
     }}
 
     .eyebrow {{
-        font-size: 0.78rem;
+        font-size: 0.92rem;
         font-weight: 700;
-        letter-spacing: 0.18em;
+        letter-spacing: 0.16em;
         color: {COLORS['accent']};
         text-transform: uppercase;
         margin-bottom: 0.5rem;
     }}
     .hero-title {{
-        font-size: 2.4rem;
+        font-size: 2.5rem;
         font-weight: 800;
-        line-height: 1.15;
+        line-height: 1.18;
         color: {COLORS['text']};
         margin: 0 0 0.6rem 0;
         letter-spacing: -0.02em;
     }}
     .hero-subtitle {{
-        font-size: 1.02rem;
+        font-size: 1.15rem;
         color: {COLORS['muted']};
         max-width: 780px;
         line-height: 1.55;
@@ -105,34 +105,34 @@ st.markdown(
         background: rgba(255, 106, 0, 0.10);
         border: 1px solid rgba(255, 106, 0, 0.35);
         color: {COLORS['accent']};
-        font-size: 0.75rem;
+        font-size: 0.9rem;
         font-weight: 600;
-        letter-spacing: 0.04em;
-        padding: 0.28rem 0.75rem;
+        letter-spacing: 0.03em;
+        padding: 0.3rem 0.8rem;
         border-radius: 999px;
         margin-bottom: 2rem;
     }}
 
     .section-eyebrow {{
-        font-size: 0.72rem;
+        font-size: 0.85rem;
         font-weight: 700;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
         color: {COLORS['muted']};
         margin-bottom: 0.25rem;
     }}
     .section-title {{
-        font-size: 1.5rem;
+        font-size: 1.65rem;
         font-weight: 700;
         color: {COLORS['text']};
         margin-bottom: 0.3rem;
         letter-spacing: -0.01em;
     }}
     .section-caption {{
-        font-size: 0.9rem;
+        font-size: 1.05rem;
         color: {COLORS['muted']};
         margin-bottom: 1.1rem;
-        line-height: 1.5;
+        line-height: 1.55;
         max-width: 820px;
     }}
 
@@ -145,21 +145,21 @@ st.markdown(
     }}
 
     .kpi-label {{
-        font-size: 0.75rem;
+        font-size: 0.88rem;
         font-weight: 600;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.05em;
         text-transform: uppercase;
         color: {COLORS['muted']};
         margin-bottom: 0.5rem;
     }}
     .kpi-value {{
-        font-size: 1.9rem;
+        font-size: 2rem;
         font-weight: 800;
         color: {COLORS['text']};
         line-height: 1.1;
     }}
     .kpi-sub {{
-        font-size: 0.82rem;
+        font-size: 0.95rem;
         color: {COLORS['muted']};
         margin-top: 0.35rem;
     }}
@@ -172,9 +172,9 @@ st.markdown(
         border-left: 3px solid {COLORS['accent']};
         border-radius: 10px;
         padding: 0.9rem 1.1rem;
-        font-size: 0.95rem;
+        font-size: 1.05rem;
         color: {COLORS['text']};
-        line-height: 1.55;
+        line-height: 1.6;
         margin: 1rem 0 0.5rem 0;
     }}
 
@@ -186,29 +186,47 @@ st.markdown(
         height: 100%;
     }}
     .finding-num {{
-        font-size: 1.6rem;
+        font-size: 1.7rem;
         font-weight: 800;
         color: {COLORS['accent']};
         opacity: 0.55;
         margin-bottom: 0.4rem;
     }}
     .finding-title {{
-        font-size: 1.02rem;
+        font-size: 1.15rem;
         font-weight: 700;
         color: {COLORS['text']};
         margin-bottom: 0.5rem;
     }}
     .finding-body {{
-        font-size: 0.89rem;
+        font-size: 1.02rem;
         color: {COLORS['muted']};
-        line-height: 1.55;
+        line-height: 1.6;
     }}
 
     .caveat {{
-        font-size: 0.78rem;
+        font-size: 0.95rem;
         color: {COLORS['muted']};
         font-style: italic;
         margin-top: 0.4rem;
+    }}
+
+    /* Streamlit's own caption/help/label text renders quite small by
+       default — bring it in line with the rest of the copy. */
+    [data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] p {{
+        font-size: 0.98rem !important;
+    }}
+    [data-testid="stWidgetLabel"] p {{
+        font-size: 1rem !important;
+    }}
+    div[data-testid="stMetric"] [data-testid="stMetricLabel"] p {{
+        font-size: 0.95rem !important;
+    }}
+    div[data-testid="stMetric"] [data-testid="stMetricValue"] {{
+        font-size: 1.7rem !important;
+    }}
+    .stMarkdown, .stMarkdown p {{
+        font-size: 1rem;
     }}
 
     hr.divider {{
@@ -263,9 +281,9 @@ st.markdown(
 PLOTLY_LAYOUT = dict(
     paper_bgcolor=COLORS["card"],
     plot_bgcolor=COLORS["card"],
-    font=dict(color=COLORS["text"], family="-apple-system, Segoe UI, Roboto, sans-serif"),
+    font=dict(color=COLORS["text"], family="-apple-system, Segoe UI, Roboto, sans-serif", size=14),
     margin=dict(l=10, r=10, t=40, b=10),
-    hoverlabel=dict(bgcolor=COLORS["bg"], font_size=12, font_color=COLORS["text"]),
+    hoverlabel=dict(bgcolor=COLORS["bg"], font_size=14, font_color=COLORS["text"]),
 )
 
 
@@ -802,7 +820,7 @@ else:
             arrowcolor=COLORS["muted"],
             ax=25 if r["residual"] >= 0 else -25,
             ay=-25 if r["residual"] >= 0 else 25,
-            font=dict(size=10, color=COLORS["text"]),
+            font=dict(size=12, color=COLORS["text"]),
             bgcolor=COLORS["bg"],
             bordercolor=COLORS["card_border"],
             borderpad=3,
